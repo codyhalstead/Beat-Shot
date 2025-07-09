@@ -1,0 +1,203 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: GameStrings_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 6ef012fd3746fb144ba770d356342d43, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 8357851136
+    m_Localized: Brecha Lunar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5114264465408
+    m_Localized: Comenzar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5172879863808
+    m_Localized: Tienda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5240110362624
+    m_Localized: Logros
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5359039852544
+    m_Localized: Controles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5503533625344
+    m_Localized: Idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5595032367104
+    m_Localized: Salir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8945689866240
+    m_Localized: Nivel 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8969006002176
+    m_Localized: Nivel 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8984772390912
+    m_Localized: Nivel 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9000593305600
+    m_Localized: Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10629598064640
+    m_Localized: Primaria
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10646735990784
+    m_Localized: Secundaria
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10664146546688
+    m_Localized: Cuerpo a cuerpo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10684874797056
+    m_Localized: Botiquines
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11235935039488
+    m_Localized: Tienda de objetos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13844917956608
+    m_Localized: Comprar 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13871690199040
+    m_Localized: Comprar 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13875930640384
+    m_Localized: Comprar 10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14662924677120
+    m_Localized: Equipar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14678594596864
+    m_Localized: Comprar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16301039464448
+    m_Localized: Nivel Completado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16665725808640
+    m_Localized: Pausado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16865064300544
+    m_Localized: Continuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28612135399424
+    m_Localized: 'Movimiento:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28686336831488
+    m_Localized: "Usar botiqu\xEDn:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28764162142208
+    m_Localized: 'Pausa:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28789814505472
+    m_Localized: 'Impulso:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28806046461952
+    m_Localized: 'Arma primaria:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28866213752832
+    m_Localized: 'Arma secundaria:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28896496627712
+    m_Localized: 'Cuerpo a cuerpo:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29035743326208
+    m_Localized: ESPACIO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29134389161984
+    m_Localized: Clic derecho
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29114675933184
+    m_Localized: Clic medio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29084414029824
+    m_Localized: Clic izquierdo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61528030752768
+    m_Localized: Elimina 100 Destructores
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61630648594432
+    m_Localized: Elimina 100 Drones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61651280375808
+    m_Localized: Elimina a 100 Espadachines
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61757299798016
+    m_Localized: "Elimina a 100 Soldados de Infanter\xEDa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61807119740928
+    m_Localized: Elimina a 100 Wheelies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61870462119936
+    m_Localized: "Elimina 100 Ca\xF1ones"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61976687063040
+    m_Localized: Completa el Nivel 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62011743055872
+    m_Localized: Completa el Nivel 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62048493547520
+    m_Localized: Completa el Nivel 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75843332911104
+    m_Localized: Logro Desbloqueado
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

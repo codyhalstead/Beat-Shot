@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - AchievementPopUp
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Bullet
+  - Water
+  - UI
+  - Player
+  - Enemy
+  - Enemy Bullet
+  - WallIgnoringEnemyBullet
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Layer 1
+    uniqueID: 1636937139
+    locked: 0
+  - name: Layer 2
+    uniqueID: 3236843865
+    locked: 0
+  - name: Layer 3
+    uniqueID: 3138738573
+    locked: 0
+  m_RenderingLayers:
+  - Default
