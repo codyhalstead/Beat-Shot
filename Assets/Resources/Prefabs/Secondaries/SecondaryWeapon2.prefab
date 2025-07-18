@@ -51,8 +51,10 @@ MonoBehaviour:
   weaponCost: 1000
   firePoint: {fileID: 0}
   fireForce: 10
-  grenadeDamage: 50
+  grenadeDamage: 100
   knockBackForce: 10
   explosionDelay: 3
   explosionRadius: 2
-  maxAmmo: 15
+  sizeMultiplierbyLevel: 1
+  damageMultiplierbyLevel: 1
+  penaltyMultiplier: 0.25

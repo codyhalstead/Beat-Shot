@@ -9,24 +9,26 @@ public class SecondaryWeapon2 : WeaponBase
     [SerializeField] public float knockBackForce = 10f;
     [SerializeField] public float explosionDelay = 3f;
     [SerializeField] public float explosionRadius = 2f;
-    [SerializeField] public int maxAmmo = 15;
+    public float sizeMultiplierbyLevel = 1f;
+    public float damageMultiplierbyLevel = 0.35f;
+    public float penaltyMultiplier = 0.25f;
 
     private void Awake()
     {
-        // Set ammo to max
-        currentAmmo = maxAmmo;
+      
     }
 
-    public override void Fire()
+    public override void Fire(int powerLevel, bool isPenalized)
     {
-        if (currentAmmo <= 0)
-        {
-            // Out of ammo, do nothing
-            return;
-        }
         // Create grenade
         GameObject grenade = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, 90f));
         Rigidbody2D rb = grenade.GetComponent<Rigidbody2D>();
+        float scaleMultiplier = 1f + sizeMultiplierbyLevel * (powerLevel - 1);
+        float damageMultiplier = 1f + damageMultiplierbyLevel * (powerLevel - 1);
+        if (isPenalized)
+        {
+            damageMultiplier *= penaltyMultiplier;
+        }
         if (rb != null)
         {
             // Apply force to grenade
@@ -37,10 +39,11 @@ public class SecondaryWeapon2 : WeaponBase
         if (grenadeScript != null)
         {
             // Pass on weapon information to script
-            grenadeScript.damage = grenadeDamage;
+            grenadeScript.damage = Mathf.RoundToInt(grenadeDamage * damageMultiplier);
             grenadeScript.knockbackForce = knockBackForce;
             grenadeScript.explosionDelay = explosionDelay;
             grenadeScript.explosionRadius = explosionRadius;
+            grenadeScript.scaleMultiplier = scaleMultiplier;
         }
         // Reduce current ammo
         currentAmmo--;

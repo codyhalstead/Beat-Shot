@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9037039650103569469}
   m_Layer: 7
   m_Name: Infantryman
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,6 +191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   spriteRenderer: {fileID: 1602400021516153333}
+  floatingDamageText: {fileID: 438970095753024980, guid: a16d84cba38f79942a049fd93457585a, type: 3}
+  worldCanvas: {fileID: 0}
   maxHealth: 100000
   currentHealth: 0
   currencyDrop: 100

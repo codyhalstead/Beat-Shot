@@ -11,7 +11,7 @@ public abstract class WeaponBase : MonoBehaviour
     public int weaponCost = 1000;
 
     // Required method for all weapons
-    public abstract void Fire();
+    public abstract void Fire(int powerLevel, bool isPenalized);
 
     public virtual void SetFirePoint(Transform point)
     {

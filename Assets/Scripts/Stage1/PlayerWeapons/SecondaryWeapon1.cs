@@ -10,6 +10,7 @@ public class SecondaryWeapon1 : WeaponBase
     [SerializeField] public float explosionDelay = 3f;
     [SerializeField] public float explosionRadius = 2f;
     [SerializeField] public int maxAmmo = 25;
+    public float penaltyMultiplier = 0.25f;
 
     private void Awake()
     {
@@ -17,13 +18,8 @@ public class SecondaryWeapon1 : WeaponBase
         currentAmmo = maxAmmo;
     }
 
-    public override void Fire()
+    public override void Fire(int powerLevel, bool isPenalized)
     {
-        if (currentAmmo <= 0)
-        {
-            // Out of ammo, do nothing
-            return;
-        }
         // Create grenade
         GameObject grenade = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = grenade.GetComponent<Rigidbody2D>();

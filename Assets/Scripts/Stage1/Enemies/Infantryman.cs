@@ -8,7 +8,7 @@ public class Infantryman : BaseEnemy
     public float delayBetweenShots;
     public int shots;
 
-    private bool isAlerting = false;
+    //private bool isAlerting = false;
     private bool isShooting = false;
 
     protected override void Start()
@@ -68,12 +68,12 @@ public class Infantryman : BaseEnemy
     IEnumerator AlertBeforePursuing()
     {
         // Play animation, pause for alert duration, then switch to Pursuing state
-        isAlerting = true;
+        //isAlerting = true;
         hasBeenAlerted = true;
         anim.Play("Enabling");
         yield return new WaitForSeconds(alertDuration);
         ChangeState(EnemyState.Pursuing);
-        isAlerting = false;
+        //isAlerting = false;
     }
 
     void PursueTarget()

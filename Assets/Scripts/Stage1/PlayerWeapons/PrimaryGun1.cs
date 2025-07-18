@@ -3,31 +3,35 @@ using UnityEngine;
 public class PrimaryGun1 : WeaponBase
 {
     public Transform firePoint;
-    [SerializeField] public float fireForce = 10f;
-    [SerializeField] public int bulletDamage = 10;
-    [SerializeField] public float knockBackForce = 10f;
-    [SerializeField] public float fireRate = 0.2f;
+    public float fireForce = 10f;
+    public int bulletDamage = 10;
+    public float knockBackForce = 10f;
+    public float fireRate = 0.2f;
+    public float sizeMultiplierbyLevel = 1f;
+    public float damageMultiplierbyLevel = 0.5f;
+    public float penaltyMultiplier = 0.25f;
+    [SerializeField] private AudioSource fireAudioSource;
+    public AudioClip firingSound;
 
-    private float cooldown = 0f;
+    //private float cooldown = 0f;
     private bool isFiringHeld = false;
 
-
-    void Update()
+    public override void Fire(int powerLevel, bool isPenalized)
     {
-        // For shooting automatically (on button hold)
-        if (isFiringHeld && cooldown <= 0f)
+        if (firingSound != null && fireAudioSource != null)
         {
-            Fire();
-            cooldown = fireRate;
+            fireAudioSource.PlayOneShot(firingSound);
         }
-        cooldown -= Time.deltaTime;
-    }
-
-    public override void Fire()
-    {
         // Create bullet
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        float scaleMultiplier = 1f + sizeMultiplierbyLevel * powerLevel;
+        float damageMultiplier = 1f + damageMultiplierbyLevel * powerLevel;
+        if (isPenalized)
+        {
+            damageMultiplier *= penaltyMultiplier;
+        }
+        bullet.transform.localScale *= scaleMultiplier;
         if (rb != null)
         {
             // Apply force to bullet
@@ -38,7 +42,7 @@ public class PrimaryGun1 : WeaponBase
         if (bulletScript != null)
         {
             // Pass on weapon information to script
-            bulletScript.damage = bulletDamage;
+            bulletScript.damage = Mathf.RoundToInt(bulletDamage * damageMultiplier);
             bulletScript.knockbackForce = knockBackForce;
         }
     }

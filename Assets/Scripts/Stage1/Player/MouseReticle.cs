@@ -7,6 +7,9 @@ public class MouseReticle : MonoBehaviour
     private Canvas canvas;
     private Vector2 currentPos;
 
+    public static Vector3 WorldPosition { get; private set; }
+
+
     private void Awake()
     {
         // Custom cursor position manager
@@ -18,19 +21,23 @@ public class MouseReticle : MonoBehaviour
 
     private void LateUpdate()
     {
-        // Get current mouse position
-        Vector2 mousePos = Mouse.current.position.ReadValue();
-        // Convert mouse position to local UI space
-        Vector2 anchoredPos;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            canvas.transform as RectTransform,
-            mousePos,
-            canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera,
-            out anchoredPos
-        );
-        // Interpolate position (for smoothness)
-        currentPos = Vector2.Lerp(currentPos, anchoredPos, 0.15f);
-        // Put custom reticle at mouse position
-        rectTransform.anchoredPosition = currentPos;
+        Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
+
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
+        WorldPosition = new Vector3(worldPos.x, worldPos.y, 0f);
+
+        if (canvas != null)
+        {
+            Vector2 anchoredPos;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                canvas.transform as RectTransform,
+                mouseScreenPos,
+                canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera,
+                out anchoredPos
+            );
+
+            currentPos = Vector2.Lerp(currentPos, anchoredPos, 0.15f);
+            rectTransform.anchoredPosition = currentPos;
+        }
     }
 }

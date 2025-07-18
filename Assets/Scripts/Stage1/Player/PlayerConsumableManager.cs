@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerConsumableManager : MonoBehaviour
 {
     [SerializeField] public int healValue = 40;
-    [SerializeField] private ConsumableUI consumableUI;
+    [SerializeField] private BeatIndicatorUI consumableUI;
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private PlayerHealth playerHealth;
     public int playerMedkits = 0;
@@ -14,7 +14,7 @@ public class PlayerConsumableManager : MonoBehaviour
         // Update UI to show consumable amount
         if (consumableUI != null)
         {
-            consumableUI.UpdateConsumableCount(playerMedkits);
+            //consumableUI.UpdateConsumableCount(playerMedkits);
         }
     }
 
@@ -34,11 +34,11 @@ public class PlayerConsumableManager : MonoBehaviour
             {
                 playerHealth.HealDamage(healValue);
                 playerMedkits--;
-                consumableUI.UpdateConsumableCount(playerMedkits);
+                //consumableUI.UpdateConsumableCount(playerMedkits);
             }
             else
             {
-                consumableUI.FlashRedTwice();
+                //consumableUI.FlashRedTwice();
             }
    
         }

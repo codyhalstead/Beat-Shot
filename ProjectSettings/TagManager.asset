@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - AchievementPopUp
+  - MainCanvas
+  - Enemy
+  - MouseReticle
   layers:
   - Default
   - TransparentFX

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 7680320685916718027}
   - component: {fileID: 8428959278140716521}
   - component: {fileID: -4198314846267997277}
+  - component: {fileID: 9199130335823528025}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -45,6 +46,7 @@ Transform:
   m_Children:
   - {fileID: 193579918246540905}
   - {fileID: 2009282009304159164}
+  - {fileID: 1268544826484024325}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2079048626433580579
@@ -385,11 +387,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b938046681f87c3499f31d4c8d13eaaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  medkits: 10
   healValue: 40
   consumableUI: {fileID: 0}
   playerInput: {fileID: 8706640700481188779}
   playerHealth: {fileID: 9072942327182689059}
+  playerMedkits: 0
 --- !u!114 &8428959278140716521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +421,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currencyUI: {fileID: 0}
+  playerCurrency: 0
+--- !u!114 &9199130335823528025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999839862264332130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48a7e6b9bb556246812394a3cd6d35c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  bpm: 145
+  beatUI: {fileID: 0}
+  lastTimingGrade: 0
+  backgroundAudioSelector: {fileID: 7026437698316629532}
+  perfectWindow: 0.05
+  goodWindow: 0.07
+  badWindow: 0.08
 --- !u!1 &1801138170938326184
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,13 +487,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponHolder: {fileID: 34670361419107581}
-  unlockedPrimaryPrefabs: []
+  beatTracker: {fileID: 0}
+  beatPowerBar: {fileID: 0}
+  beatPowerMax: 240
+  beatPowerPerBeatHit: 20
   defaultPrimaryPrefab: {fileID: 8186779691513286059, guid: d289a01f371d36f4eb587552ed038a53, type: 3}
-  unlockedSecondaryPrefabs: []
   defaultSecondaryPrefab: {fileID: 6888417758670287200, guid: d6209c97fb1490742a0e51e679e50112, type: 3}
   ammoUI: {fileID: 0}
-  unlockedMeleePrefabs: []
   defaultMeleePrefab: {fileID: 5426166659677492530, guid: 97a7d52778cbcaf4a9982c8c1952b79f, type: 3}
+--- !u!1 &5273130334963657240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1268544826484024325}
+  - component: {fileID: 7026437698316629532}
+  m_Layer: 0
+  m_Name: BackgroundAudioSelector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1268544826484024325
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5273130334963657240}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 34670361419107581}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7026437698316629532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5273130334963657240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99a7c37e14a8df45a32ff0a19b1d10e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSource: {fileID: 0}
+  songs:
+  - {fileID: 8300000, guid: cd1170d2c14f8cf439b670180062d8c7, type: 3}
+  - {fileID: 8300000, guid: b825288554e69c9418d7f863bf6b0a84, type: 3}
+  - {fileID: 8300000, guid: ffa09aed97b796d4f92e2c1d7097b798, type: 3}
+  - {fileID: 8300000, guid: 64e1e53cd34ad4f408c186792c6915d6, type: 3}
+  songBPM:
+  - 145
+  - 115
+  - 95
+  - 142
 --- !u!1 &5352542254210872971
 GameObject:
   m_ObjectHideFlags: 0

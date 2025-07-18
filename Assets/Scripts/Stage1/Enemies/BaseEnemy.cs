@@ -10,6 +10,8 @@ public abstract class BaseEnemy : MonoBehaviour
     protected Animator anim;
     protected bool tookDamage = false;
     protected bool isDead = false;
+    [SerializeField] private GameObject floatingDamageText;
+    public Canvas worldCanvas;
 
     [Header("Stats")]
     public int maxHealth = 1000;
@@ -59,6 +61,11 @@ public abstract class BaseEnemy : MonoBehaviour
         {
             target = GameObject.FindGameObjectWithTag("Player")?.transform;
         }
+        GameObject canvasObj = GameObject.FindGameObjectWithTag("MainCanvas");
+        if (canvasObj != null)
+        {
+            worldCanvas = canvasObj.GetComponent<Canvas>();
+        }
     }
 
     public void Awake()
@@ -76,6 +83,7 @@ public abstract class BaseEnemy : MonoBehaviour
         // Subtract given damage amount from health, track that enemy was attacked 
         currentHealth -= amount;
         tookDamage = true;
+        ShowDamageText(amount);
         // Either die if hp now <= 0, or have player sprite flash red
         if (currentHealth <= 0 && !isDead)
         {
@@ -86,6 +94,21 @@ public abstract class BaseEnemy : MonoBehaviour
             if (spriteRenderer != null)
             {
                 StartCoroutine(FlashColor(Color.red));
+            }
+        }
+    }
+
+    private void ShowDamageText(int amount)
+    {
+        if (floatingDamageText != null)
+        {
+            Vector3 spawnPos = transform.position + (Vector3.up * 0.5f);
+            GameObject textObj = Instantiate(floatingDamageText, spawnPos, Quaternion.identity);
+
+            FloatingDamageText ft = textObj.GetComponent<FloatingDamageText>();
+            if (ft != null)
+            {
+                ft.SetText("-" + amount.ToString());
             }
         }
     }

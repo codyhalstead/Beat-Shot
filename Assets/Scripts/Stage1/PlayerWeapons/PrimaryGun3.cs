@@ -3,38 +3,45 @@ using UnityEngine;
 public class PrimaryGun3 : WeaponBase
 {
     public Transform firePoint;
-    [SerializeField] public float fireForce = 10f;
-    [SerializeField] public int bulletDamage = 10;
-    [SerializeField] public float knockBackForce = 10f;
-    [SerializeField] public float fireRate = 0.2f;
+    public float fireForce = 10f;
+    public float bulletDamage = 10f;
+    public float knockBackForce = 10f;
+    public float fireRate = 0.2f;
+    [SerializeField] private AudioSource fireAudioSource;
+    public AudioClip firingSound;
+    public int additionalBulletsPerLevel = 2;
+    public float damagePercentageIncreasePerLevel = 0.1f;
+    public float penaltyMultiplier = 0.25f;
 
-    private float cooldown = 0f;
+    //private float cooldown = 0f;
     private bool isFiringHeld = false;
 
-
-    void Update()
+    public override void Fire(int powerLevel, bool isPenalized)
     {
-        // For shooting automatically (on button hold)
-        if (isFiringHeld && cooldown <= 0f)
+        if (firingSound != null && fireAudioSource != null)
         {
-            Fire();
-            cooldown = fireRate;
+            fireAudioSource.PlayOneShot(firingSound);
         }
-        cooldown -= Time.deltaTime;
-    }
-
-    public override void Fire()
-    {
         // Calc attack direction, center bullet angle
         Vector2 shootDir = firePoint.up;
         float baseAngle = firePoint.eulerAngles.z;
 
         int numberOfShots = 3;
-        float spreadAngle = 15f;
+        float damageMultiplier = 1f;
+        for (int i = 0; i < powerLevel; i++)
+        {
+            numberOfShots += additionalBulletsPerLevel;
+            damageMultiplier += damagePercentageIncreasePerLevel;
+        }
+        if (isPenalized)
+        {
+            damageMultiplier *= penaltyMultiplier;
+        }
+        float spreadAngle = 10f;
 
         for (int i = 0; i < numberOfShots; i++)
         {
-            // Calculate the spread offset (-15, 0, 15 for 3 shots)
+            // Calculate the spread offset (-10, 0, 10 for 3 shots)
             float offset = (i - (numberOfShots - 1) / 2f) * spreadAngle;
             float angle = baseAngle + offset;
 
@@ -57,7 +64,7 @@ public class PrimaryGun3 : WeaponBase
             if (bulletScript != null)
             {
                 // Pass on weapon information to script
-                bulletScript.damage = bulletDamage;
+                bulletScript.damage = Mathf.RoundToInt(bulletDamage * damageMultiplier);
                 bulletScript.knockbackForce = knockBackForce;
             }
         }
