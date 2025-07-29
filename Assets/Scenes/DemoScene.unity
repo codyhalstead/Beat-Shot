@@ -107780,6 +107780,14 @@ PrefabInstance:
       propertyPath: musicSource
       value: 
       objectReference: {fileID: 270158736}
+    - target: {fileID: 7026437698316629532, guid: 5f2351d05540f0749857fb1d6e40eebe, type: 3}
+      propertyPath: 'songs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: f5825f9db3e0f6643b152af4d65bfad9, type: 3}
+    - target: {fileID: 7026437698316629532, guid: 5f2351d05540f0749857fb1d6e40eebe, type: 3}
+      propertyPath: 'songBPM.Array.data[1]'
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 7680320685916718027, guid: 5f2351d05540f0749857fb1d6e40eebe, type: 3}
       propertyPath: consumableUI
       value: 
@@ -107818,7 +107826,7 @@ PrefabInstance:
       objectReference: {fileID: 528464987}
     - target: {fileID: 9199130335823528025, guid: 5f2351d05540f0749857fb1d6e40eebe, type: 3}
       propertyPath: badWindow
-      value: 0.5
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 9199130335823528025, guid: 5f2351d05540f0749857fb1d6e40eebe, type: 3}
       propertyPath: audioSource

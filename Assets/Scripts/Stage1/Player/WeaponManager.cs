@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
 using System;
-using UnityEditor.Localization.Plugins.XLIFF.V12;
+
 
 public class WeaponManager : MonoBehaviour
 {
