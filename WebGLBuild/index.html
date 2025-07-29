@@ -17,7 +17,7 @@
         }
 
         #unity-container {
-            margin: 40px auto;
+            margin: 80px auto 40px auto;
             padding: 10px;
             background-color: #444;
         }
@@ -93,7 +93,6 @@
             <h2>Controls</h2>
             <ul>
                 <li><strong>WASD</strong> – Move</li>
-                <li><strong>Mouse</strong> – Aim</li>
                 <li><strong>Left Click</strong> – Primary Shot</li>
                 <li><strong>Middle Click</strong> – Finisher</li>
                 <li><strong>Right Click</strong> – Melee Swing</li>
@@ -205,6 +204,12 @@
         };
 
         document.body.appendChild(script);
+
+        canvas.addEventListener('mousedown', function (e) {
+            if (e.button === 1) {  
+                e.preventDefault();
+            }
+        });
 
     </script>
 </body>
