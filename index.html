@@ -117,8 +117,7 @@
 
         <!-- Thumbnail -->
         <div class="thumbnail">
-            <!-- <img src="PagePhotos/Thumbnail.png" alt="Game Thumbnail" style="display: block; margin: 0 auto; max-width: 100%;" /> -->
-            <h2>(Thumbnail)</h2>
+            <img src="PagePhotos/Thumbnail.png" alt="Game Thumbnail" style="display: block; margin: 0 auto; max-width: 100%;" />
             <hr />
         </div>
 
@@ -126,8 +125,24 @@
         <div class="abstract">
             <h2>Abstract</h2>
             <p>
-                (abstract)
+                Beat-Shot is a gameplay demo showcasing a unique mechanic developed for George Mason University’s Introduction to Game Design course. This project is
+                my personal take on a game mechanic that combines aspects of both rhythm-based and shooter games to create something new and engaging.<br /><br />
 
+                Players are rewarded for timing their shots to the beat of the music, gaining weapon-enhancing effects that grow stronger the longer they maintain a
+                beat combo. This demo features a variety of sample weapons, each of which evolves with rhythm-accurate play:<br /></p>
+
+            <ul>
+                <li>A shotgun-style weapon that increases its damage and the number of bullets fired per shot.</li>
+                <li>A single-shot weapon that fires larger, more damaging projectiles.</li>
+                <li>A burst-style weapon that gains more damage and stronger target-homing capabilities.</li>
+                <li>A melee weapon that gains more damage and an increased blade size.</li>
+            </ul>
+
+            <p>
+                Players can also expend their accumulated beat combo gauge to unleash a powerful finisher. In this demo, this takes the form of a rocket whose explosion
+                size and damage scale strongly with the gauge level.<br /><br />
+
+                This easily adjustable mechanic could be applied to various shooter-based game formats, including 3D games. Try it for free below!
             </p>
             <hr />
         </div>
@@ -136,13 +151,11 @@
         <div class="screenshots">
             <h2>Screenshots</h2>
             <div class="screenshot-row">
-                <!--
                 <img src="PagePhotos/Screenshot1.png" alt="Screenshot 1" onclick="openModal(this)">
                 <img src="PagePhotos/Screenshot2.png" alt="Screenshot 2" onclick="openModal(this)">
                 <img src="PagePhotos/Screenshot3.png" alt="Screenshot 3" onclick="openModal(this)">
                 <img src="PagePhotos/Screenshot4.png" alt="Screenshot 4" onclick="openModal(this)">
                 <img src="PagePhotos/Screenshot5.png" alt="Screenshot 5" onclick="openModal(this)">
-                    -->
             </div>
             <hr />
         </div>
@@ -155,36 +168,34 @@
 
         <script>
             function openModal(imgElement) {
-              var modal = document.getElementById("imgModal");
-              var modalImg = document.getElementById("modalImage");
-              modal.style.display = "block";
-              modalImg.src = imgElement.src;
+                var modal = document.getElementById("imgModal");
+                var modalImg = document.getElementById("modalImage");
+                modal.style.display = "block";
+                modalImg.src = imgElement.src;
             }
 
             function closeModal() {
-              document.getElementById("imgModal").style.display = "none";
+                document.getElementById("imgModal").style.display = "none";
             }
 
-            window.onclick = function(event) {
-              const modal = document.getElementById("imgModal");
-              if (event.target == modal) {
-                modal.style.display = "none";
-              }
+            window.onclick = function (event) {
+                const modal = document.getElementById("imgModal");
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
             }
         </script>
 
         <!-- Video Demo -->
         <div class="video">
             <h2>Video Demo</h2>
-            <!--
             <iframe width="560" height="315"
-                    src=""
+                    src="https://www.youtube.com/embed/qkiugvavHPk"
                     title="Personal Project Presentation"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen>
             </iframe>
-                -->
             <hr />
         </div>
 
@@ -205,9 +216,11 @@
                 <img src="PagePhotos/DeveloperPhoto-Cody.jpeg" alt="Team Member 1" width="100" />
                 <div>
                     <h3>Cody Halstead</h3>
-                    <p>Cody is a senior Computer Science student at George Mason University, expected to complete his bachelor’s degree in
-                    December 2025. His interests span a wide range of topics, from mathematical theory and web security to data analytics and
-                    full-stack development.</p>
+                    <p>
+                        Cody is a senior Computer Science student at George Mason University, expected to complete his bachelor’s degree in
+                        December 2025. His interests span a wide range of topics, from mathematical theory and web security to data analytics and
+                        full-stack development.
+                    </p>
                 </div>
             </div>
             <hr />
@@ -217,11 +230,12 @@
         <div class="assets used">
             <h2>Third-Party Assets Used</h2>
             <p>
-                <!--
-                <a href="PagePhotos/ThirdPartyAssetsUsed.pdf" download>⬇️ Third-Party Assets Used (PDF)</a>
-                    -->
+            <a href="PagePhotos/ThirdPartyAssetsUsed.pdf" download>⬇️ Third-Party Assets Used (PDF)</a>
             </p>
         </div>
-
+        <p>
+            Project logo created with the help of: <a href="https://www.vecteezy.com/free-vector/audio-spectrum">Audio Spectrum Vectors by Vecteezy</a>
+        </p>
+        
     </body>
 </html>
